@@ -6,6 +6,13 @@ TagManager:
   tags:
   - PlayerController
   - StaminaSlider
+  - HealthSlider
+  - ObjectHealth
+  - Enemy
+  - Ground
+  - Multishot
+  - Singleshot
+  - Ammo
   layers:
   - Default
   - TransparentFX
@@ -13,11 +20,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Enemy
+  - Ammo
+  - Pickup
   - 
   - 
   - 
