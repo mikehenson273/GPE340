@@ -15,17 +15,31 @@ public class PickUpWeapon : PickUpBoosts
                 //if there is a weapon in the controller destroy it to add the newly picked up weapon
                 Destroy(GameManager.instance.playerControls.GetComponent<Player_Controller>().weapon);
             }
-            //add in instantianting weapon to the player and making it a child of the player controller
+            //add in instantianting weapon to the player and making it a child of the pawn's left hand
             GameObject tempWeapon = Instantiate(weapon, other.gameObject.GetComponent<Pawn>().leftHand);
-            //tempWeapon.transform.localPosition = collision.gameObject.GetComponent<Pawn>().leftHand.transform.localPosition;
-            //tempWeapon.transform.localRotation = collision.gameObject.GetComponent<Pawn>().leftHand.transform.localRotation;
+
             //sets the player controller weapon object equal to the created weapon
             other.gameObject.GetComponentInParent<Player_Controller>().weapon = tempWeapon;
-            //set the weapons position equal to the game object (purely for testing and will be changed)
-            //tempWeapon.transform.position = collision.gameObject.transform.position;
+            
             //sets the player character reference in the weapon to enable moving, will be changed
-            tempWeapon.GetComponent<Weapon>().playerCharacter = other.gameObject.GetComponent<Pawn>();
-            //collision.gameObject.GetComponent<Health>().AddToHealth(20); //add 20 points to health
+            tempWeapon.GetComponent<Weapon>().pawnCharacter = other.gameObject.GetComponent<Pawn>();
+            
+            //destroys the pickup object
+            Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            if (other.gameObject.GetComponent<Pawn>().GetPawnWeapon() != null)
+            {
+                other.gameObject.GetComponent<Pawn>().DestroyPawnWeapon();
+            }
+
+            //add in instantianting weapon to the player and making it a child of the pawn's left hand
+            GameObject tempWeapon = Instantiate(weapon, other.gameObject.GetComponent<Pawn>().leftHand);
+
+            //sets the pawn reference in the weapon to enable moving, will be changed
+            tempWeapon.GetComponent<Weapon>().pawnCharacter = other.gameObject.GetComponent<Pawn>();
+
             //destroys the pickup object
             Destroy(gameObject);
         }

@@ -12,7 +12,7 @@ public class Pawn : MonoBehaviour
     
     public Animator anim; //player animator so that the character is animated... Also allows movement through root motion
 
-    private Weapon playerWeapon;
+    private Weapon pawnWeapon;
     public Transform leftHand,
                      rightHand;
 
@@ -45,9 +45,10 @@ public class Pawn : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.GetComponentInParent<Player_Controller>().weapon != null && playerWeapon == null) //only runs if playerWeapon doesn't exist
+        //only runs if playerWeapon doesn't exist but weapon in player controller DOES exist
+        if (gameObject.GetComponentInParent<Player_Controller>().weapon != null && pawnWeapon == null)
         {
-            playerWeapon = gameObject.GetComponentInParent<Player_Controller>().weapon.GetComponent<Weapon>();
+            pawnWeapon = gameObject.GetComponentInParent<Player_Controller>().weapon.GetComponent<Weapon>();
         }
     }
 
@@ -81,17 +82,17 @@ public class Pawn : MonoBehaviour
 
     private void OnAnimatorIK(int layerIndex)
     {
-        if (playerWeapon != null)
+        if (pawnWeapon != null)
         {
-            if (playerWeapon.leftHandGrip != null)
+            if (pawnWeapon.leftHandGrip != null)
             {
-                anim.SetIKPosition(AvatarIKGoal.LeftHand, playerWeapon.leftHandGrip.position);
+                anim.SetIKPosition(AvatarIKGoal.LeftHand, pawnWeapon.leftHandGrip.position);
                 anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
-                anim.SetIKRotation(AvatarIKGoal.LeftHand, playerWeapon.leftHandGrip.rotation);
+                anim.SetIKRotation(AvatarIKGoal.LeftHand, pawnWeapon.leftHandGrip.rotation);
                 anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1.0f);
                 //GameManager.instance.playerControls.GetComponent<Player_Controller>().weapon.GetComponent<Weapon>().leftHandGrip
             }
-            if (playerWeapon.rightHandGrip != null && anim.GetBool("FireBow") == true)
+            if (pawnWeapon.rightHandGrip != null && anim.GetBool("FireBow") == true)
             {
                 anim.SetLayerWeight(anim.GetLayerIndex("Firing"), 1);
                 //Debug.Log("Firing layer weight is " + anim.GetLayerWeight(anim.GetLayerIndex("Firing")));
@@ -108,5 +109,14 @@ public class Pawn : MonoBehaviour
             anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 0f);
             anim.SetIKRotationWeight(AvatarIKGoal.RightHand, 0f);
         }
+    }
+
+    public Weapon GetPawnWeapon()
+    {
+        return pawnWeapon;
+    }
+    public void DestroyPawnWeapon()
+    {
+        Destroy(pawnWeapon);
     }
 }

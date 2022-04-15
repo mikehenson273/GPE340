@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
             //if a player controller is found than hold it in the location in the manager
             playerControls = GameObject.FindGameObjectWithTag("PlayerController");
         }
-        if (tempPlayerCharacter == null)
+        if (tempPlayerCharacter == null) //if there is no player
         {
+            //set the weapon as null so the user doesn't respawn with one (might change to autospawn with one)
             playerControls.GetComponent<Player_Controller>().weapon = null;
             //sets the tempPlayerCharacter as the playerCharacter and spawns a clone as child of the player controller
             tempPlayerCharacter = Instantiate(playerCharacter, playerControls.transform);

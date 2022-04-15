@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3382001452459560742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3434043210506453955}
+  m_Layer: 7
+  m_Name: LeftGrip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3434043210506453955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382001452459560742}
+  m_LocalRotation: {x: -0.48180547, y: -0.67230886, z: -0.5517696, w: 0.106839105}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5054777177437499291}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -57.658, y: 133.503, z: -238.091}
 --- !u!1 &5057570871899622937
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +153,9 @@ Transform:
   m_Children:
   - {fileID: 5060152051740826537}
   - {fileID: 5060100126188868403}
-  - {fileID: 8791044517487080838}
+  - {fileID: 1614358880611764429}
+  - {fileID: 3434043210506453955}
+  - {fileID: 1778152728112695025}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -162,9 +194,9 @@ MonoBehaviour:
   fireRate: 0.5
   playerCharacter: {fileID: 0}
   weaponAmmo: {fileID: 7353657293746204795, guid: dd4a8a410327f6344a92dba07a617ad4, type: 3}
-  leftHandGrip: {fileID: 5059950860613814865}
-  rightHandGrip: {fileID: 5060352197000889613}
-  firingPoint: {fileID: 8791044517487080838}
+  leftHandGrip: {fileID: 3434043210506453955}
+  rightHandGrip: {fileID: 1778152728112695025}
+  firingPoint: {fileID: 1614358880611764429}
 --- !u!1 &5057686826097208485
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,14 +375,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5057916085045852233}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9.044061, y: 9.044061, z: 9.044061}
   m_Children:
   - {fileID: 5059950860613814865}
   m_Father: {fileID: 5054777177437499291}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &5058154304439597059
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,13 +681,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5058388046233712777}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 99.999985}
   m_Children: []
   m_Father: {fileID: 5054777177437499291}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!137 &5174825703255350299
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -1043,7 +1075,7 @@ Transform:
   m_Father: {fileID: 5054797422075265949}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8811956384373310535
+--- !u!1 &6767959052699530818
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1051,7 +1083,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8791044517487080838}
+  - component: {fileID: 1778152728112695025}
+  m_Layer: 7
+  m_Name: RightGrip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1778152728112695025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767959052699530818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0966, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5054777177437499291}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7917372015300734265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614358880611764429}
   m_Layer: 7
   m_Name: Firepoint
   m_TagString: Untagged
@@ -1059,15 +1121,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8791044517487080838
+--- !u!4 &1614358880611764429
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8811956384373310535}
+  m_GameObject: {fileID: 7917372015300734265}
   m_LocalRotation: {x: -0.12782352, y: -0.045309525, z: -0.08914356, w: 0.986743}
-  m_LocalPosition: {x: 0.00000073061847, y: 0.0000008693004, z: 0.0000001875303}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5054777177437499291}

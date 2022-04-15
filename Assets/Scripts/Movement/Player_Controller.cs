@@ -83,7 +83,7 @@ public class Player_Controller : MonoBehaviour
         //if left click on mouse and has a weapon
         if (Input.GetKey(KeyCode.Mouse0) && weapon != null)
         {
-            if (!weapon.GetComponent<Weapon>().FiredGun()) //if hasn't fired
+            if (!weapon.GetComponent<Weapon>().FiredWeapon()) //if hasn't fired
             {
                 pawn.anim.SetBool("FireBow", true);
                 weapon.GetComponent<Weapon>().FireWeapon("Player");
@@ -125,9 +125,11 @@ public class Player_Controller : MonoBehaviour
 
     void InstaKill() //for killing the player in case a glitch happened to cause them to be out of bounds
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P)) //if user presses "P"
         {
+            //grab max health and pass through to reduce health
             pawn.GetComponent<Health>().ReduceHealth(pawn.GetComponent<Health>().GetMaxHealth());
+            //runs through and checks the player's health to initiate destruction
             pawn.GetComponent<Health>().HealthTracker();
         }
     }

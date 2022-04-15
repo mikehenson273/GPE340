@@ -33,11 +33,17 @@ public class ObjectSpawner : MonoBehaviour
         //AND if the player controller weapon isn't null
         if (tempPrefab == null &&
             !waitingForRespawn &&
-            prefabToSpawn != prefabToSpawn.GetComponent<PickUpWeapon>() &&
-            GameManager.instance.playerControls.GetComponent<Player_Controller>().weapon != null)
+            prefabToSpawn != prefabToSpawn.GetComponent<PickUpWeapon>())
         {
             //if all other checks pass, check if the object to spawn is the same weapon that the player is holding
-            if (GameManager.instance.playerControls.GetComponent<Player_Controller>().weapon.tag != prefabToSpawn.tag)
+            if (GameManager.instance.playerControls.GetComponent<Player_Controller>().weapon != null &&
+                GameManager.instance.playerControls.GetComponent<Player_Controller>().weapon.tag != prefabToSpawn.tag)
+            {
+                StartCoroutine(WaitToRespawn()); //in case that the object is empty and it's not waiting to respawn then start the coroutine
+                StopCoroutine(WaitToRespawn()); //once coroutine is done stop it
+            }
+
+            else if (prefabToSpawn == prefabToSpawn.GetComponent<PickUpHealth>())
             {
                 StartCoroutine(WaitToRespawn()); //in case that the object is empty and it's not waiting to respawn then start the coroutine
                 StopCoroutine(WaitToRespawn()); //once coroutine is done stop it
