@@ -53,13 +53,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3851964625603066636}
-  m_LocalRotation: {x: -0.48180547, y: -0.67230886, z: -0.5517696, w: 0.106839105}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.49119762, y: 0.49119762, z: 0.50865006, w: 0.50865006}
+  m_LocalPosition: {x: 0, y: 0, z: 0.037}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8103741980867828310}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -57.658, y: 133.503, z: -238.091}
+  m_LocalEulerAnglesHint: {x: 0, y: 88, z: 90}
 --- !u!1 &4258034940893162815
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,13 +83,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4258034940893162815}
-  m_LocalRotation: {x: -0.12782352, y: -0.045309525, z: -0.08914356, w: 0.986743}
-  m_LocalPosition: {x: 0.00000073061847, y: 0.0000008693004, z: 0.0000001875303}
+  m_LocalRotation: {x: -0.05813297, y: 0.020986551, z: 0.019421728, w: 0.9978993}
+  m_LocalPosition: {x: -0.00000024504925, y: -0.0000012582376, z: -0.0000010271579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8103741980867828310}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -15.09, y: -3.957, z: -9.8}
+  m_LocalEulerAnglesHint: {x: -6.71, y: 2.287, z: 2.096}
 --- !u!1 &8097531068145075170
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8097531068145075170}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -160,11 +160,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageOutput: 15
   fireRate: 0
-  playerCharacter: {fileID: 0}
+  pawnCharacter: {fileID: 0}
   weaponAmmo: {fileID: 7353657293746204795, guid: dd4a8a410327f6344a92dba07a617ad4, type: 3}
   leftHandGrip: {fileID: 485232120763886166}
   rightHandGrip: {fileID: 8029094108099924294}
   firingPoint: {fileID: 3443380380876384594}
+  debugFireForward: {x: 0, y: 0, z: 0}
 --- !u!1 &8097559217502220176
 GameObject:
   m_ObjectHideFlags: 0

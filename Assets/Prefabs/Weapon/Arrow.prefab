@@ -174,8 +174,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.017559852, y: 0.011945067, z: 0.67289704}
-  m_Center: {x: 0.00041196682, y: 0.0008190824, z: 0.3630779}
+  m_Size: {x: 0.017559852, y: 0.29937756, z: 0.67289704}
+  m_Center: {x: 0.00041147452, y: -0.14289719, z: 0.36306617}
 --- !u!114 &8276607438680351851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,14 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43ea350e4675ba4d9f673a2538088b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageOutput: 0
-  fireRate: 0
-  playerCharacter: {fileID: 0}
-  weaponAmmo: {fileID: 0}
-  leftHandGrip: {fileID: 0}
-  rightHandGrip: {fileID: 0}
-  firingPoint: {fileID: 0}
   arrowSpeed: 0
+  pawnCharacter: {fileID: 0}
+  damageDealt: 0
 --- !u!1 &7354035968294680023
 GameObject:
   m_ObjectHideFlags: 0

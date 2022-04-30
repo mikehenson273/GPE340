@@ -15,11 +15,11 @@ public class Weapon : MonoBehaviour
                      rightHandGrip, //holds for the player's right hand to grip
                      firingPoint; //holds for where the ammo is supposed to fire from
 
-
+    protected bool triedToFire; //error check mainly so AI doesn't immediately fire a weapon upon pickup
+    
     protected void Awake()
     {
-        //sets the inherited game object equal to the player character
-        pawnCharacter = GameManager.instance.tempPlayerCharacter.GetComponent<Pawn>();
+        triedToFire = false; //initial value set up mainly for the AI to ensure it doesn't immediately fire upon picking up the weapon
         hasFired = false; //ensures that when the weapon is picked up it can fire
         if (fireRate <= 0) //if the fire rate is 0
         {
@@ -41,8 +41,14 @@ public class Weapon : MonoBehaviour
         return hasFired; //returns the check
     }
 
-    public int GetDamage() //returning how much damage can be done
+    public float GetDamage() //returning how much damage can be done
     {
         return damageOutput;
+    }
+
+    public void setAIDamageAndFireRate() //if the pawn that equips a weapon is an AI reduce the damage and lower the rate of fire
+    {
+        damageOutput = Mathf.RoundToInt(damageOutput / 2);
+        fireRate = fireRate * 2;
     }
 }

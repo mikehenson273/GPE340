@@ -13,9 +13,14 @@ public class GameManager : MonoBehaviour
 
     public Camera_Movement cam;
 
+    //mainly to tell if the player is unarmed and once the player gets a weapon, then enemies will spawn
+    [HideInInspector] public bool enemiesCanSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
+        enemiesCanSpawn = false; //initial set up to prevent enemies from spawning outright
+
         //If an instance hasn't been created
         if (instance == null)
         {
